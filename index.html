@@ -52,10 +52,11 @@
           </div>
           <div class="search">
             <img src="./image/search 1.svg" alt="search" />
-            <input class="search-input" type="search" placeholder="Search"/>
+            <input class="search-input" type="search" placeholder="Search" />
           </div>
         </div>
 
+        <!-- stats -->
         <div class="stats-wrapper">
           <!-- Total customers -->
           <div class="stats-title">
@@ -63,7 +64,7 @@
               <img src="./image/profile-2user.svg" alt="profile 2user" />
             </div>
             <div class="stats-texts">
-              <p class="stats-name">Total customers</p>
+              <p class="stats-name">Total Customers</p>
               <h3 class="stats-num">5,423</h3>
               <div class="stats-grow">
                 <div>
@@ -102,7 +103,7 @@
               <img src="./image/monitor.svg" alt="actiwe now" />
             </div>
             <div class="stats-texts">
-              <p class="stats-name">Actiwe now</p>
+              <p class="stats-name">Active Now</p>
               <h3 class="stats-num">189</h3>
               <div class="stats-grow">
                 <div class="avatars">
@@ -133,6 +134,135 @@
                   />
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- form  -->
+        <div class="form-wrapper">
+          <!-- Tepasi: Sarlavha + Qidiruv va Sort -->
+          <div class="form-up">
+            <div class="form-title-wrapper">
+              <h2 class="form-title">All Customers</h2>
+              <p class="form-text">Active Members</p>
+            </div>
+
+            <div class="form-controls">
+              <div class="table-search">
+                <img src="./image/search 1.svg" alt="search" />
+                <input
+                  class="search-input"
+                  type="search"
+                  placeholder="Search"
+                />
+              </div>
+
+              <div class="sort-box">
+                <label for="sort-select" class="sort-label">Sort by :</label>
+                <select id="sort-select" class="sort-select">
+                  <option value="newest" selected>Newest</option>
+                  <option value="oldest">Oldest</option>
+                  <option value="az">Name (A-Z)</option>
+                  <option value="active">Active</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Scroll bo'ladigan jadval konteyneri -->
+          <div class="table-responsive">
+            <table class="customers-table">
+              <thead>
+                <tr>
+                  <th>Customer Name</th>
+                  <th>Company</th>
+                  <th>Phone Number</th>
+                  <th>Email</th>
+                  <th>Country</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Jane Cooper</td>
+                  <td>Microsoft</td>
+                  <td>(225) 555-0118</td>
+                  <td>jane@microsoft.com</td>
+                  <td>United States</td>
+                  <td><span class="status active">Active</span></td>
+                </tr>
+                <tr>
+                  <td>Floyd Miles</td>
+                  <td>Yahoo</td>
+                  <td>(205) 555-0100</td>
+                  <td>floyd@yahoo.com</td>
+                  <td>Kiribati</td>
+                  <td><span class="status inactive">Inactive</span></td>
+                </tr>
+                <tr>
+                  <td>Ronald Richards</td>
+                  <td>Adobe</td>
+                  <td>(302) 555-0107</td>
+                  <td>ronald@adobe.com</td>
+                  <td>Israel</td>
+                  <td><span class="status inactive">Inactive</span></td>
+                </tr>
+                <tr>
+                  <td>Marvin McKinney</td>
+                  <td>Tesla</td>
+                  <td>(252) 555-0126</td>
+                  <td>marvin@tesla.com</td>
+                  <td>Iran</td>
+                  <td><span class="status active">Active</span></td>
+                </tr>
+                <tr>
+                  <td>Jerome Bell</td>
+                  <td>Google</td>
+                  <td>(629) 555-0129</td>
+                  <td>jerome@google.com</td>
+                  <td>Réunion</td>
+                  <td><span class="status active">Active</span></td>
+                </tr>
+                <tr>
+                  <td>Kathryn Murphy</td>
+                  <td>Microsoft</td>
+                  <td>(406) 555-0120</td>
+                  <td>kathryn@microsoft.com</td>
+                  <td>Curaçao</td>
+                  <td><span class="status active">Active</span></td>
+                </tr>
+                <tr>
+                  <td>Jacob Jones</td>
+                  <td>Yahoo</td>
+                  <td>(208) 555-0112</td>
+                  <td>jacob@yahoo.com</td>
+                  <td>Brazil</td>
+                  <td><span class="status active">Active</span></td>
+                </tr>
+                <tr>
+                  <td>Kristin Watson</td>
+                  <td>Facebook</td>
+                  <td>(704) 555-0127</td>
+                  <td>kristin@facebook.com</td>
+                  <td>Åland Islands</td>
+                  <td><span class="status inactive">Inactive</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Pasti: Pagination -->
+          <div class="table-footer">
+            <p class="showing-text">Showing data 1 to 8 of 256K entries</p>
+            <div class="pagination">
+              <button class="page-btn">&lt;</button>
+              <button class="page-btn active">1</button>
+              <button class="page-btn">2</button>
+              <button class="page-btn">3</button>
+              <button class="page-btn">4</button>
+              <span class="page-dots">...</span>
+              <button class="page-btn">40</button>
+              <button class="page-btn">&gt;</button>
             </div>
           </div>
         </div>

@@ -2,6 +2,8 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: #fafbff;
+  overflow: hidden;
 }
 * {
   margin: 0;
@@ -9,21 +11,30 @@ body {
   box-sizing: border-box;
 }
 
-.menu-wrapper {
+.container {
   width: 100%;
-  max-width: 306px;
   height: 100vh;
-  padding: 36px 28px 76px 28px;
+  display: flex;
+  overflow: hidden;
+}
+
+.menu-wrapper {
+  width: 280px;
+  flex-shrink: 0;
+  height: 100vh;
+  padding: 30px 24px;
   background-color: #fff;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .dashboard-wrapper {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 64px;
+  margin-bottom: 24px;
   gap: 8px;
   img {
     width: 100%;
@@ -54,7 +65,7 @@ body {
 .menu-item {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
 }
 .dashboard {
 }
@@ -80,6 +91,11 @@ body {
 .chevron {
 }
 .customer {
+  background-color: #5932ea;
+  border-radius: 8px;
+  h3 {
+    color: white;
+  }
 }
 .active {
 }
@@ -89,6 +105,44 @@ body {
 }
 .help {
 }
+
+/* Barcha menyu elementlari uchun umumiy padding va o'tish effekti */
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 14px;
+  border-radius: 8px;
+  color: #9197b3;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Faol (Customers) menyu elementining stili */
+.customer.active,
+.nav-item.active {
+  background-color: #5932ea;
+  color: #ffffff;
+}
+
+/* Ichidagi "Customers" yozuvini oq qilish */
+.customer.active .nav-title h3,
+.nav-item.active .nav-title h3 {
+  color: #ffffff;
+}
+
+/* Ichidagi ikonkalar (customer_icon.svg) ni oq rangga o'tkazish */
+.customer.active .nav-title img,
+.nav-item.active .nav-title img {
+  filter: brightness(0) invert(1);
+}
+
+/* O'ng tomondagi '>' (chevron) belgisini oq qilish */
+.customer.active .chevron p,
+.nav-item.active .chevron p {
+  color: #ffffff;
+}
+
 .subs_profile {
   display: flex;
   flex-direction: column;
@@ -170,7 +224,14 @@ body {
 
 /* Content */
 .content-wrapper {
-  padding: 40px 95px 80px 70px;
+  flex: 1;
+  min-width: 0;
+  height: 100vh;
+  padding: 32px 50px 24px 50px; /* O'ng (50px) va chap (50px) tomonlari bir xil teng */
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  overflow: hidden;
 }
 .great-search-block {
   display: flex;
@@ -188,13 +249,16 @@ body {
   }
 }
 .search {
-  padding: 8px;
+  width: 216px;
+  padding: 10px 12px;
   display: flex;
   align-items: center;
   gap: 8px;
   border-radius: 12px;
   background-color: #ffffff;
+  box-shadow: 0px 10px 60px rgba(226, 236, 249, 0.5);
 }
+
 .search-input {
   color: #b5b7c0;
   font-weight: 400;
@@ -202,16 +266,19 @@ body {
   line-height: 100%;
   letter-spacing: -1%;
   border: none;
+  outline: none;
+  color: #333;
+  width: 100%;
 }
 .stats-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 35px 50px;
+  padding: 28px 40px;
   border-radius: 30px;
   background-color: white;
-  gap: 50px;
-  margin-top: 40px;
+  gap: 30px;
+  flex-shrink: 0;
 }
 .stats-title {
   display: flex;
@@ -285,9 +352,229 @@ body {
   height: 26px;
   border-radius: 50%;
   object-fit: cover;
-  /* border: 1.5pc solid #fff; */
+  border: 1.5px solid #fff;
   margin-left: -8px;
 }
 .avatar:first-child {
   margin-left: 0;
+}
+
+/* form */
+
+/* Form oq kartasi - qolgan barcha bo'sh balandlikni o'zi egallaydi */
+.form-wrapper {
+  flex: 1;
+  min-height: 0; /* Endi ishlaydi va faqat jadval ichida scroll hosil qiladi */
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 24px 32px;
+  box-shadow: 0px 10px 60px rgba(226, 236, 249, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tepa qism: Sarlavha + Search + Sort */
+.form-up {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-shrink: 0; /* Tepasi siqilib qolmasligi uchun */
+}
+
+.form-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 4px;
+}
+
+.form-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: #16c098;
+}
+
+.form-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.table-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f9fbff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  width: 200px;
+}
+
+.table-search .search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 12px;
+  color: #333333;
+}
+
+.sort-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #f9fbff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.sort-label {
+  color: #7e7e7e;
+  white-space: nowrap;
+}
+
+.sort-select {
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  color: #3d3c42;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+}
+
+/* FAQAT RO'YXAT SCROLL BO'LADIGAN QISM */
+.table-responsive {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  overflow-y: auto; /* Sig'magan qismi shu yerda scroll bo'ladi */
+  overflow-x: auto;
+}
+
+.table-responsive::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 10px;
+}
+
+/* Jadval */
+.customers-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.customers-table thead th {
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  z-index: 2;
+  font-size: 13px;
+  font-weight: 500;
+  color: #b5b7c0;
+  padding: 12px 8px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.customers-table td {
+  font-size: 13px;
+  font-weight: 500;
+  color: #292d32;
+  padding: 16px 8px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.customers-table th:last-child,
+.customers-table td:last-child {
+  text-align: center;
+}
+
+/* ACTIVE VA INACTIVE TUGMALARI (Tuzatilgan) */
+.status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 29px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.status.active {
+  background-color: rgba(22, 192, 152, 0.38);
+  color: #008767;
+  border: 1px solid #00b087;
+}
+
+.status.inactive {
+  background-color: #ffc5c5;
+  color: #df0404;
+  border: 1px solid #df0404;
+}
+
+/* PASTKI FOOTER (Har doim ekran pastki chegarasida qotib turadi) */
+.table-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 16px;
+  margin-top: auto;
+  flex-shrink: 0; /* Pastga siqilib ketmaydi */
+  background-color: #ffffff;
+}
+
+.showing-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: #b5b7c0;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.page-btn {
+  width: 26px;
+  height: 24px;
+  border-radius: 4px;
+  border: 1px solid #eeeeee;
+  background-color: #f5f5f5;
+  color: #404b52;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-btn.active {
+  background-color: #5932ea;
+  color: #ffffff;
+  border-color: #5932ea;
+}
+
+.page-dots {
+  font-size: 12px;
+  color: #000000;
 }

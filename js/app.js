@@ -17,7 +17,7 @@ function menuPrint() {
             </div>
             <div class="chevron"><p>></p></div>
           </div>
-
+            
           <div class="customer active nav-item">
             <div class="nav-title">
               <img src="./image/customer_icon.svg" alt="user square" />
